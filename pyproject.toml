@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "goozy"
+version = "0.1.0"
+description = "CLI tool to control GOOZY Smart LED Light Bar"
+authors = ["Masande Mtintsilana"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "goozy"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1.4"
+bleak = "^0.20.2"
+
+[tool.poetry.scripts]
+goozy = "goozy.goozy:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
