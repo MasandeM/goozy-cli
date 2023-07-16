@@ -56,17 +56,19 @@ async def discover():
 
 @cli.command()
 @click.option('--address', required=True)
-@click.option('--on/--off', default=False)
+@click.option('--on', default=False, is_flag=True, flag_value=True)
+@click.option('--off', default=False, is_flag=True, flag_value=True)
 @click.option('--color')
 @coro
-async def control(address, on, color):
+async def control(address, on, off, color):
     
     client = BleakClient(address)
     try:
         await client.connect()
         if on:
             await client.write_gatt_char(LIGHTS_CHARACTERISTIC, bytes.fromhex("A06904FFFFFFFF"))
-
+        elif off:
+            await client.write_gatt_char(LIGHTS_CHARACTERISTIC, bytes.fromhex("A06904000000FF"))
         elif color:
             if color in COLORS.keys():                
                 hexcolor = "A06904{}FF".format(COLORS[color])
