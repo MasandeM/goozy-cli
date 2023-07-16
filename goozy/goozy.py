@@ -1,8 +1,8 @@
 import asyncio
 import click
 import os
-from configparser import ConfigParser
 import colorsys
+from configparser import ConfigParser
 from bleak import BleakScanner, BleakClient
 from functools import wraps
 
