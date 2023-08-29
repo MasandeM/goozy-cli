@@ -10,6 +10,7 @@ LIGHTS_CHARACTERISTIC = "0000ffe1-0000-1000-8000-00805f9b34fb"
 COLORS = {
     'white':'FFFFFF',
     'silver':'C0C0C0',
+    'orange':'ffa500',
     'gray':'808080',
     'black':'000000',
     'red':'FF0000',
